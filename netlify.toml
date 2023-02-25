@@ -2,4 +2,4 @@
   HUGO_VERSION = "0.101.0"
 [context.production.environment]
   HUGO_VERSION = "0.30"
-  HUGO_BASEURL = "https://buyuksoy.me"
+  HUGO_BASEURL = "http://buyuksoy.me/"
