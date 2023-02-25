@@ -5,7 +5,7 @@ subtitle:   "Hello World, Hello Blog"
 date:       2017-11-04
 author:     "赵化冰"
 published: true
-URL: "/2017/11/03/hello-world/"
+url: "/2017/11/03/hello-world/"
 image:      "https://img.zhaohuabing.com/post-bg-2015.jpg"
 ---
 
