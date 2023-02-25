@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{ $pages := (where (where .Site.Pages "Type" "post") "IsPage" true) }}
+
+<div data-pagefind-ignore="all" class="container">
+    <div class="row">
+   	    <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container
+        ">
+            <div class="archive-list">
+                {{ range ($pages.GroupByDate "2006") }}
+                {{ if gt .Key 1 }}
+                    {{ $.Scratch.Set "count" 1 }}
+                    {{ range .Pages  }}
+                        {{ if (eq ($.Scratch.Get "count") 1) }}
+                            {{ $.Scratch.Set "count" 0 }}
+                            <div class="row">
+                            <div class="col-md-3">
+                                <h1 class="title is-4 has-text-weight-normal">{{ .Date.Format "2006" }}</h1>
+                                                     
+                        {{ end }}
+                    {{ end }}
+                    </div>
+                    <div class="col-md-10">
+                        <ul>
+                            {{ range .Pages }}
+                            <li style="list-style: none;">
+                                <span style="font-style: italic; font-size: 12px;">{{ .Date.Format "02 January 2006" }}</span> 
+                                <div style="font-size: 16px; font-family: 'Lora', 'Times New Roman', serif; font-weight: bold;"><a href="{{ .RelPermalink }}"> {{ .Title }}</a></div>
+                                <div style="margin-bottom: 10px; font-size: 16px; margin: 0 0 1rem; text-align: justify"> {{ .Description }} </div>
+                                <p></p>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>                  
+
+                {{ end }}
+                
+                </div>
+                
+                {{ end }}
+            </div>
+       	</div>
+        {{ partial "sidebar.html" . }}
+	</div>
+</div>
+
+
+<hr />
+{{ end }}

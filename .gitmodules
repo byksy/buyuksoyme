@@ -1,0 +1,3 @@
+[submodule "themes/buyuksoyme"]
+    path=themes/buyuksoyme
+    url= "https://github.com/zhaohuabing/hugo-theme-cleanwhite.git"
